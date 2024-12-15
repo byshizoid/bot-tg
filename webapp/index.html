@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Эмодзи-статус</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <h1>Обновите свой эмодзи-статус</h1>
+  <button onclick="sendEmoji('☀️', 'Солнечно')">Солнечно ☀️</button>
+  <button onclick="sendEmoji('☁️', 'Облачно')">Облачно ☁️</button>
+  <button onclick="sendEmoji('🌧️', 'Дождливо')">Дождливо 🌧️</button>
+  <button onclick="sendEmoji('❄️', 'Снежно')">Снежно ❄️</button>
+
+  <script>
+    function sendEmoji(emoji, description) {
+      const data = { emoji: emoji, description: description };
+      Telegram.WebApp.sendData(JSON.stringify(data));
+    }
+
+    Telegram.WebApp.ready();
+  </script>
+</body>
+</html>
